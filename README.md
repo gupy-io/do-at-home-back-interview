@@ -28,29 +28,30 @@ Todas as requisições serão prefixadas com o seguinte endereço: `http://local
 
 Operações realizadas pela pessoa candidata.
 
-| Descrição | Verbo | Endereço | Body |
-| --------- | ----- | -------- | ---- |
-| Criar uma nova conta | `POST` | `/accounts/create-account` | `{ name: String, email: String, password: String }` |
-| Se aplica para uma vaga existente | `POST` | `/jobs/apply/{jobId}` | `{ accountId: Number }` |
+| Descrição | Verbo | Endereço         | Body |
+| --------- | ----- |------------------| ---- |
+| Criar uma nova conta | `POST` | `/accounts`      | `{ name: String, email: String, password: String }` |
+| Se aplica para uma vaga existente | `POST` | `/jobs/{jobId}:apply` | `{ accountId: Number }` |
 
 
 ### Pessoa entrevistadora
 
 Operações realizadas pela pessoa entrevistadora.
 
-| Descrição | Verbo | Endereço | Body |
-| --------- | ----- | -------- | ---- |
-| Visualiza aplicações nas vagas | `GET` | `/jobs/view-applications/{jobId}` |
+| Descrição | Verbo | Endereço                      | Body |
+| --------- | ----- |-------------------------------| ---- |
+| Visualiza aplicações nas vagas | `GET` | `/applications?jobId={jobId}` |
 
 ### Pessoa recrutadora
 
 Operações realizadas pela pessoa recrutadora.
 
-| Descrição | Verbo | Endereço | Body |
-| --------- | ----- | -------- | ---- |
-| Publicar uma vaga existente | `PATCH` | `/jobs/publish-job/{jobId}` |
-| Criar uma vaga nova | `POST` | `/jobs/create-job` | `{ name: String }` |
-| Lista todas as vagas | `GET` | `/jobs/list-all-jobs` |
+| Descrição               | Verbo  | Endereço         | Body |
+|-------------------------|--------|------------------| ---- |
+| Publicar uma vaga existente | `POST` | `/jobs/{jobId}:publish` |
+| Criar uma vaga nova     | `POST` | `/jobs`          | `{ name: String }` |
+| Lista todas as vagas    | `GET`  | `/jobs`          |
+| Atualiza uma vaga       | `PUT`  | `/jobs/{jobId}`  | `{ name: String }` |
 
 Caso a pessoa utilize o _software_ Insomnia, ela pode utilizar [esse arquivo](https://github.com/gupy-io/simple-api-interview/blob/main/insomnia.json) para importar as requisições já montadas e definidas.
 
