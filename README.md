@@ -28,10 +28,10 @@ Todas as requisições serão prefixadas com o seguinte endereço: `http://local
 
 Operações realizadas pela pessoa candidata.
 
-| Descrição | Verbo | Endereço         | Body |
-| --------- | ----- |------------------| ---- |
-| Criar uma nova conta | `POST` | `/accounts`      | `{ name: String, email: String, password: String }` |
-| Se aplica para uma vaga existente | `POST` | `/jobs/{jobId}:apply` | `{ accountId: Number }` |
+| Descrição | Verbo | Endereço        | Body                                                |
+| --------- | ----- |-----------------|-----------------------------------------------------|
+| Criar uma nova conta | `POST` | `/accounts`     | `{ name: String, email: String, password: String }` |
+| Se aplica para uma vaga existente | `POST` | `/applications` | `{ accountId: Number, jobId: Number }`              |
 
 
 ### Pessoa entrevistadora
